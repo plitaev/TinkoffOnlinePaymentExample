@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+ <html lang="ru">
+  <head>
+   <title>PRODUCT NAME</title>
+   <script src='../../jquery.min.js'></script>
+   <script src='../../getUrlParams.js'></script>
+   <script src='bank.js'></script>
+   <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+ <body>
+  <form name="TinkoffPayForm" id="TinkoffPayForm" onsubmit="pay(this); return false;" style="display:none">
+   <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="YOUR_TERMINAL_KEY">
+   <input class="tinkoffPayRow" type="hidden" name="frame" value="false">
+   <input class="tinkoffPayRow" type="hidden" name="language" value="ru">
+   <input class="tinkoffPayRow" type="text" value="PRODUCT_PRICE" name="amount" required id="amount">
+   <input class="tinkoffPayRow" type="text" value="" name="order" id="order">
+   <input class="tinkoffPayRow" type="text" value="PRODUCT NAME" name="description">
+   <input class="tinkoffPayRow" type="text" value="" name="name" id="name">
+   <input class="tinkoffPayRow" type="text" value="" name="email" id="email">
+   <input class="tinkoffPayRow" type="hidden" id="receipt" name="receipt" value='{"Email":"info@example.com",
+   "EmailCompany":"YOUR_COMPANY_EMAIL","Taxation":"usn_income","Items":[{"Name":"PRODUCT_NAME","Price":PRODUCT_PRICE,"Quantity": 1.00,
+   "Amount":PRODUCT_PRICE*100,"PaymentMethod":"full_payment","PaymentObject": "commodity","Tax":"vat10"}]}'>
+   <input class="tinkoffPayRow" type="submit" value="Оплатить">
+  </form>
+ </body>
+</html>  
